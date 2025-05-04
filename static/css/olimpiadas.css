@@ -1,0 +1,591 @@
+:root {
+    --azul: #000587;
+    --laranja: #FF6734;
+    --amarelo: #FFD94D;
+    --verde: #19A22E;
+    --cabeçalho: "Playfair Display", serif;
+    --paragrafo: "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
+    --avenir: 'Avenir', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--paragrafo);
+}
+
+/* ===== CLASSES DE CONTROLE RESPONSIVO ===== */
+.mobile-only {
+    display: none !important;
+}
+
+.desktop-only {
+    display: block !important;
+}
+
+@media (max-width: 1200px) {
+    .mobile-only {
+        display: block !important;
+    }
+    
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+/* ===== HEADER ===== */
+header {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.section {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+#leftSection {
+    padding-left: 30px;
+}
+
+#logo {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    outline: none;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#logo:focus {
+    outline: none;
+    border-color: transparent;
+}
+
+#centerSection {
+    flex-grow: 1;
+    justify-content: center;
+}
+
+/* ===== NAVEGAÇÃO DESKTOP ===== */
+.ul-nav {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.li-nav {
+    position: relative;
+    width: 150px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.li-nav:hover {
+    border-bottom: 2px solid black;
+}
+
+.li-nav.active {
+    border-bottom: 2px solid black;
+}
+
+.li-nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-family: var(--paragrafo);
+    font-size: 17px;
+    font-weight: 400;
+    height: 100%;
+    padding: 10px 0;
+}
+
+/* ===== SELECT DE IDIOMA ===== */
+select {
+    background-color: #fff;
+    color: var(--azul);
+    font-size: 1rem;
+    font-family: var(--avenir);
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    appearance: none;
+}
+
+select:hover {
+    background-color: #f5f5f5;
+}
+
+/* ===== MENU MOBILE ===== */
+#mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 20px;
+    z-index: 100;
+    color: var(--azul);
+}
+
+/* ===== RIGHT SECTION (IDIOMA DESKTOP) ===== */
+#rightSection {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    padding-right: 30px;
+}
+/* ===== BARRA DE PESQUISA ===== */
+form {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 30px 0;
+}
+
+.searchBar {
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    padding: 0 40px 0 20px;
+    font-size: 18px;
+    font-family: var(--avenir);
+    background-color: #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.searchBar::placeholder {
+    color: #666;
+    font-family: var(--avenir);
+}
+
+.searchBar:focus {
+    outline: none;
+    background-color: #e0e0e0;
+    box-shadow: 0 0 0 2px rgba(0,5,135,0.2);
+}
+
+.searchButton {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.searchButton:hover {
+    color: var(--azul);
+}
+
+.searchButton i {
+    font-size: 18px;
+}
+
+#left-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#left-right h1{
+    font-family: var(--cabeçalho);
+    font-size: 66px;
+    font-weight: 400;
+    color: #000587;
+}
+
+.left-right{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 30px 20%;
+    box-sizing: border-box;
+}
+
+#left, #right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    flex-wrap: wrap;
+    width: 50%;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--paragrafo);
+}
+
+#left{
+    margin-right: 40px;
+}
+
+#left h2, #right h2{
+    margin-bottom: 20px;
+    font-family: var(--avenir);
+    font-size: 36px;
+    color: var(--laranja);
+}
+#olimpiadas {
+    display: flex;
+    flex-direction: column; /* cima e baixo um embaixo do outro */
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+.cima, .baixo {
+    display: flex;
+    flex-direction: row; /* elementos dentro lado a lado */
+    gap: 100px;
+    flex-wrap: wrap; /* para não quebrar feio se a tela for pequena */
+    justify-content: center;
+   
+}
+
+#categoria{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.categoria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid 5px white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.categoria-text{
+    font-family: var(--avenir);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 5px 30px;
+}
+
+.exatas{
+   background-image: url(/static/imagens/exatas.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.cienciasNatureza{
+    background-image: url(/static/imagens/ciencias.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.tecnologia{
+    background-image: url(/static/imagens/tecnologia.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.linguagens{
+   background-image: url(/static/imagens/linguagens.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.humanas{
+   background-image: url(/static/imagens/humanas.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.interdiciplinaresOutros{
+   background-image: url(/static/imagens/interdiciplinares.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (min-width: 900px) and (max-width: 1200px) {
+/* Header */
+#mobile-menu-button {
+    display: block;
+}
+
+/* Esconde o select desktop em mobile */
+#rightSection {
+    display: none !important;
+}
+
+/* Menu Mobile */
+.ul-nav {
+    position: fixed;
+    top: 100px;
+    left: -100%;
+    width: 70%;
+    height: calc(100vh - 100px);
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.ul-nav.active {
+    left: 0;
+}
+
+.li-nav {
+    width: 100%;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.li-nav:hover {
+    border-bottom: 1px solid #eee;
+    background: #f5f5f5;
+}
+
+.li-nav a {
+    justify-content: flex-start;
+}
+
+/* Select mobile */
+#mobile-language-selector {
+    padding: 15px 20px;
+}
+
+#mobile-language-selector select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Conteúdo */
+#left-right h1 {
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#left h2, #right h2 {
+    font-size: 1.5rem;
+}
+
+.left-right{
+    flex-direction: row;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.cima, .baixo {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+#porque ul{
+    padding-top: 20px;
+    padding-left: 30px;
+}
+}
+
+@media (max-width: 899px) {
+    /* Header */
+    #mobile-menu-button {
+        display: block;
+    }
+    
+    /* Esconde o select desktop em mobile */
+    #rightSection {
+        display: none !important;
+    }
+    
+    /* Menu Mobile */
+    .ul-nav {
+        position: fixed;
+        top: 100px;
+        left: -100%;
+        width: 70%;
+        height: calc(100vh - 100px);
+        background: white;
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 0;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .ul-nav.active {
+        left: 0;
+    }
+    
+    .li-nav {
+        width: 100%;
+        padding: 15px 20px;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+    }
+    
+    .li-nav:hover {
+        border-bottom: 1px solid #eee;
+        background: #f5f5f5;
+    }
+    
+    .li-nav a {
+        justify-content: flex-start;
+    }
+    
+    /* Select mobile */
+    #mobile-language-selector {
+        padding: 15px 20px;
+    }
+    
+    #mobile-language-selector select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    /* Conteúdo */
+    #left-right h1 {
+        font-size: 30px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    #left h2, #right h2 {
+        font-size: 1.5rem;
+        margin-top: 15px;
+    }
+
+    .left-right{
+        width: 100%;
+        flex-direction: column;
+        padding-left: 10%;
+        padding-right: 10%;
+        box-sizing: border-box;
+    }
+
+    #introducao{
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .cima, .baixo {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .left-right {
+        width: 100%;
+        flex-direction: column;
+        padding: 0; /* Removemos o padding lateral aqui */
+        box-sizing: border-box;
+    }
+
+    #left, #right {
+        width: 100%;
+        padding: 0 10%; /* Movemos o padding para os elementos internos */
+        box-sizing: border-box;
+    }
+
+    #introducao {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column; /* Melhor que flex-wrap para conteúdo linear */
+        padding: 0; /* Remove qualquer padding interno */
+    }
+
+    #paragrafoIntro {
+        width: 100%;
+        max-width: 100%;
+        word-wrap: break-word; /* Garante que o texto não ultrapasse */
+        margin-bottom: 10px;
+    }
+
+    /* Ajuste adicional para garantir que os elementos filhos expandam */
+    #introducao > * {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #porque ul{
+        padding-top: 20px;
+        padding-left: 30px;
+    }
+}
+
+@media (min-width: 1920px) {
+    header{
+        height: 600px;
+    }
+    
+    
+    #logo {
+        width: auto;
+        height: 180px;
+    }
+
+    #centerSection a{
+        font-size: 25px;
+        gap: 30px;
+    }
+
+    .searchBar::placeholder{
+        font-size: 25px;
+    }
+
+    #rightSection select{
+        font-size: 25px;
+    }
+
+    #rightSection option{
+        font-size: 15px;
+    }
+}
+
+
