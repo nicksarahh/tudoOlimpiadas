@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tudo Olimpiadas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sobre.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/globo.ico') }}" media="(prefers-color-scheme: light)">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/globo-branco.ico') }}" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Playfair Display font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!-- Avenir font -->
+    <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="{{ url_for('static', filename='js/idioma.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <!-- Botão Hamburger (visível apenas em mobile) -->
+        <button id="mobile-menu-button" class="mobile-only" aria-label="Abrir menu" aria-expanded="false">
+            <i class="bi bi-list"></i>
+        </button>
+    
+        <!-- Logo (visível em todas as resoluções) -->
+        <div id="leftSection" class="section">
+            <a href="/" aria-label="Página inicial">
+                <img id="logo" src="{{url_for('static', filename='imagens/logo.jpg')}}" alt="Tudo Olimpíadas">
+            </a>
+        </div>
+    
+        <!-- Menu Principal -->
+        <div id="centerSection" class="section">
+            <nav aria-label="Navegação principal">
+                <ul class="ul-nav">
+                     <!-- Seletor de Idiomas Mobile (visível apenas no menu mobile) -->
+                     <li class="li-nav mobile-only" id="mobile-language-selector">
+                        <form method="GET" action="{{ url_for('buscar') }}" id="search-form">
+                            <input type="text" class="searchBar" id="searchBar" name="pesquisa" placeholder="Pesquisar..." value="{{ request.args.get('pesquisa', '') }}">
+                            <button class="searchButton" type="submit"><i class="bi bi-search"></i></button>
+                        </form>
+                    </li>
+                    <li class="li-nav"><a href="/" id="inicioHeader">Início</a></li>
+                    <li class="li-nav"><a href="/olimpiadas" id="olimpiadasHeader">Olímpiadas</a></li>
+                    <li class="li-nav"><a href="/sobre" id="sobreHeader">Sobre</a></li>
+                    <li class="li-nav"><a href="/blog" id="blog">Blog</a></li>
+                    
+                    <!-- Seletor de Idiomas Mobile (visível apenas no menu mobile) -->
+                    <li class="li-nav mobile-only" id="mobile-language-selector">
+                        <select id="seletor-idioma-mobile" aria-label="Selecionar idioma">
+                            <option value="pt">🇧🇷 Português</option>
+                            <option value="en">🇺🇸 English</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    
+        <!-- Seletor de Idiomas Desktop (visível apenas em desktop) -->
+        <div id="rightSection" class="section desktop-only">
+            <form method="GET" action="{{ url_for('buscar') }}" id="search-form">
+                <input type="text" class="searchBar" id="searchBar" name="pesquisa" placeholder="Pesquisar..." value="{{ request.args.get('pesquisa', '') }}">
+                <button class="searchButton" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+            <select id="seletor-idioma" aria-label="Selecionar idioma">
+                <option value="pt">🇧🇷 Português</option>
+                <option value="en">🇺🇸 English</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div id="sobre">
+                <h1 id="tituloSobre">Sobre nós</h1>
+                <h2 id="tituloMissao">Nossa missão</h2>
+                <p id="paragrafoMissao">O Tudo Olimpíadas é o seu destino online para descobrir tudo sobre as Olimpíadas de conhecimento, projetadas para estudantes do ensino fundamental 2 ao ensino médio. Nosso site fornece informações detalhadas, dicas de estudo e recursos educacionais para ajudar os alunos a se prepararem e terem sucesso nessas competições desafiadoras. Estamos comprometidos em promover o aprendizado e o crescimento intelectual dos estudantes, capacitando-os a alcançar seu pleno potencial acadêmico.</p>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <div id="equipe">
+                <h1 id="tituloEquipe">Equipe</h1>
+                <h2 id="tituloConheca">Conheça a nossa equipe</h2>
+                <p id="paragrafoConheca">Conheça a equipe dedicada por trás do Tudo Olimpíadas, composta por profissionais apaixonados por educação e conhecimento. Nossa equipe está empenhada em fornecer as melhores informações e orientações para os estudantes que buscam se destacar nas Olimpíadas de conhecimento.</p>
+            </div>
+            <div>
+                <div class="isabella">
+                    <div class="pessoa">
+                        <div class="foto foto-isabella"></div>
+                        <h3 id="name">Isabella de Castro Castellani</h3>
+                    </div>
+                </div>
+                <hr></hr>
+                    <div class="laila">
+                        <div class="pessoa">
+                            <div class="foto foto-laila"></div>
+                            <h3 id="name">Laila Domingues Simões</h3>
+                        </div>
+                    </div>
+                <hr></hr>
+                <div class="inae-nicoly">
+                    <div id="inae-nicoly">
+                        <div class="pessoa">
+                            <div class="foto foto-inae"></div>
+                            <h3 id="name">Inaê Dutra Barbosa</h3>
+                        </div>
+                        <div class="pessoa">
+                            <div class="foto foto-nicoly"></div>
+                            <h3 id="name">Nicoly Sarah Feltri Teixeira</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="daniela">
+                    <div class="pessoa">
+                        <div class="foto foto-daniela"></div>
+                        <h3 id="name">Daniela Oliveira Brotherhood</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Menu Mobile
+        const menuButton = document.getElementById('mobile-menu-button');
+        const navMenu = document.querySelector('.ul-nav');
+        
+        if (menuButton && navMenu) {
+            menuButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+                menuButton.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+            });
+            
+            // Fechar ao clicar fora
+            document.addEventListener('click', (e) => {
+                if (!navMenu.contains(e.target) && e.target !== menuButton) {
+                    navMenu.classList.remove('active');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    
+        // Sincroniza seletores de idioma
+        function sincronizarIdiomas() {
+            const desktopSelect = document.getElementById('seletor-idioma');
+            const mobileSelect = document.getElementById('seletor-idioma-mobile');
+            
+            if (desktopSelect && mobileSelect) {
+                desktopSelect.addEventListener('change', (e) => {
+                    mobileSelect.value = e.target.value;
+                    trocarIdioma(e.target.value);
+                });
+                
+                mobileSelect.addEventListener('change', (e) => {
+                    desktopSelect.value = e.target.value;
+                    trocarIdioma(e.target.value);
+                });
+            }
+        }
+        
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', () => {
+            sincronizarIdiomas();
+            aplicarIdioma(); // Sua função existente
+        });
+    </script>
+</body>
+</html>

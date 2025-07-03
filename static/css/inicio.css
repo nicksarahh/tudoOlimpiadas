@@ -1,0 +1,457 @@
+:root {
+    --azul: #000587;
+    --laranja: #FF6734;
+    --amarelo: #FFD94D;
+    --verde: #19A22E;
+    --cabeçalho: "Playfair Display", serif;
+    --paragrafo: "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
+    --avenir: 'Avenir', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--paragrafo);
+}
+
+/* ===== CLASSES DE CONTROLE RESPONSIVO ===== */
+.mobile-only {
+    display: none !important;
+}
+
+.desktop-only {
+    display: block !important;
+}
+
+@media (max-width: 1200px) {
+    .mobile-only {
+        display: block !important;
+    }
+    
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+/* ===== HEADER ===== */
+header {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.section {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+#leftSection {
+    padding-left: 30px;
+}
+
+#logo {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    outline: none;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#logo:focus-visible {
+    outline: none !important;
+    border: none !important;
+}
+
+#logo:focus {
+    outline: none !important;
+    border: none !important;
+}
+
+#centerSection {
+    flex-grow: 1;
+    justify-content: center;
+}
+
+/* ===== NAVEGAÇÃO DESKTOP ===== */
+.ul-nav {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.li-nav {
+    position: relative;
+    width: 150px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.li-nav:hover {
+    border-bottom: 2px solid black;
+}
+
+.li-nav.active {
+    border-bottom: 2px solid black;
+}
+
+.li-nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-family: var(--paragrafo);
+    font-size: 17px;
+    font-weight: 400;
+    height: 100%;
+    padding: 10px 0;
+}
+
+/* ===== SELECT DE IDIOMA ===== */
+select {
+    background-color: #fff;
+    color: var(--azul);
+    font-size: 1rem;
+    font-family: var(--avenir);
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    appearance: none;
+}
+
+select:hover {
+    background-color: #f5f5f5;
+}
+
+/* ===== MENU MOBILE ===== */
+#mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 20px;
+    z-index: 100;
+    color: var(--azul);
+}
+
+/* ===== RIGHT SECTION (IDIOMA DESKTOP) ===== */
+#rightSection {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    padding-right: 30px;
+}
+/* ===== CONTEÚDO PRINCIPAL ===== */
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://static.wixstatic.com/media/f3be4ff2da7642d887eb5094442c39f5.jpg/v1/fill/w_1870,h_811,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/f3be4ff2da7642d887eb5094442c39f5.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.bem-vindo {
+    max-width: 650px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 100px;
+    margin: 100px auto;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.bem-vindo h1 {
+    font-size: 49px;
+    font-family: var(--cabeçalho);
+    font-weight: 400;
+    color: var(--azul);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.bem-vindo p {
+    font-family: var(--paragrafo);
+    font-weight: 400;
+    font-size: 17px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.pesquise, .magica {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.pesquise i {
+    color: var(--laranja);
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.magica i {
+    color: var(--amarelo);
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+/* ===== BARRA DE PESQUISA ===== */
+form {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 30px 0;
+}
+
+.searchBar {
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    padding: 0 40px 0 20px;
+    font-size: 18px;
+    font-family: var(--avenir);
+    background-color: #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.searchBar::placeholder {
+    color: #666;
+    font-family: var(--avenir);
+}
+
+.searchBar:focus {
+    outline: none;
+    background-color: #e0e0e0;
+    box-shadow: 0 0 0 2px rgba(0,5,135,0.2);
+}
+
+.searchButton {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.searchButton:hover {
+    color: var(--azul);
+}
+
+.searchButton i {
+    font-size: 18px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (min-width: 900px) and (max-width: 1200px) {
+/* Header */
+#mobile-menu-button {
+    display: block;
+}
+
+/* Esconde o select desktop em mobile */
+#rightSection {
+    display: none !important;
+}
+
+/* Menu Mobile */
+.ul-nav {
+    position: fixed;
+    top: 100px;
+    left: -100%;
+    width: 70%;
+    height: calc(100vh - 100px);
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.ul-nav.active {
+    left: 0;
+}
+
+.li-nav {
+    width: 100%;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.li-nav:hover {
+    border-bottom: 1px solid #eee;
+    background: #f5f5f5;
+}
+
+.li-nav a {
+    justify-content: flex-start;
+}
+
+/* Select mobile */
+#mobile-language-selector {
+    padding: 15px 20px;
+}
+
+#mobile-language-selector select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+    .bem-vindo {
+        padding: 30px 50px;
+        margin: 50px auto;
+    }
+    
+    .bem-vindo h1 {
+        font-size: 36px;
+    }
+    
+    .li-nav {
+        width: 120px;
+    }
+}
+
+@media (max-width: 899px){
+   /* Header */
+   #mobile-menu-button {
+    display: block;
+}
+
+/* Esconde o select desktop em mobile */
+#rightSection {
+    display: none !important;
+}
+
+/* Menu Mobile */
+.ul-nav {
+    position: fixed;
+    top: 100px;
+    left: -100%;
+    width: 70%;
+    height: calc(100vh - 100px);
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.ul-nav.active {
+    left: 0;
+}
+
+.li-nav {
+    width: 100%;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.li-nav:hover {
+    border-bottom: 1px solid #eee;
+    background: #f5f5f5;
+}
+
+.li-nav a {
+    justify-content: flex-start;
+}
+
+/* Select mobile */
+#mobile-language-selector {
+    padding: 15px 20px;
+}
+
+#mobile-language-selector select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+    
+    /* Conteúdo */
+    .bem-vindo {
+        width: 90%;
+        padding: 30px;
+        margin: 30px auto;
+    }
+    
+    .bem-vindo h1 {
+        font-size: 28px;
+    }
+    
+    .pesquise, .magica {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+    }
+    
+    form {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1920px) {
+    header{
+        height: 200px;
+    }
+    
+    
+    #logo {
+        width: auto;
+        height: 180px;
+    }
+
+    #centerSection a{
+        font-size: 25px;
+        gap: 30px;
+    }
+
+    .searchBar::placeholder{
+        font-size: 25px;
+    }
+
+    #rightSection select{
+        font-size: 25px;
+    }
+
+    #rightSection option{
+        font-size: 15px;
+    }
+}
