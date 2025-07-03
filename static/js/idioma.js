@@ -187,7 +187,7 @@ const textos = {
     }
   }
 };
-// Idioma padrão: inglês
+// Idioma padrão: português
 let idiomaAtual = localStorage.getItem('idioma') || 'pt';
 
 function trocarIdioma(novoIdioma) {
