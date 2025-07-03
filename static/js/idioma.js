@@ -42,7 +42,7 @@ const textos = {
       filtrar:"Filtrar Olimpíadas",
       areaConhecimento: "Área de conhecimento",
       tipoInscricao: "Tipo de registro",
-      status: "Status",
+      status: "Período de Inscrição",
       nivel: "Nível",
       exatas: "Exatas",
       tecnologia: "Tecnologia",
@@ -139,7 +139,7 @@ const textos = {
       filtrar:"Filter olympiads",
       areaConhecimento: "Knowledge Area",
       tipoInscricao: "Registration Type",
-      status: "Status",
+      status: "Registration Period",
       nivel: "Level",
       exatas: "Mathematics",
       tecnologia: "Technology",
@@ -187,8 +187,8 @@ const textos = {
     }
   }
 };
-// Idioma padrão: inglês
-let idiomaAtual = localStorage.getItem('idioma') || 'en';
+// Idioma padrão: português
+let idiomaAtual = localStorage.getItem('idioma') || 'pt';
 
 function trocarIdioma(novoIdioma) {
   console.log("Idioma selecionado:", novoIdioma);

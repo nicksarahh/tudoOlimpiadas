@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="iBlxvq3C_BoH3NCDFXMPEy877Cjw1YmKEdyte8ijDRM" />
     <title>Tudo Olimpiadas</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/inicio.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/globo.ico') }}" media="(prefers-color-scheme: light)">
@@ -39,6 +40,13 @@
         <div id="centerSection" class="section">
             <nav aria-label="Navegação principal">
                 <ul class="ul-nav">
+                     <!-- Seletor de Idiomas Mobile (visível apenas no menu mobile) -->
+                     <li class="li-nav mobile-only" id="mobile-language-selector">
+                        <form method="GET" action="{{ url_for('buscar') }}" id="search-form">
+                            <input type="text" class="searchBar" id="searchBar" name="pesquisa" placeholder="Pesquisar..." value="{{ request.args.get('pesquisa', '') }}">
+                            <button class="searchButton" type="submit"><i class="bi bi-search"></i></button>
+                        </form>
+                    </li>
                     <li class="li-nav"><a href="/" id="inicioHeader">Início</a></li>
                     <li class="li-nav"><a href="/olimpiadas" id="olimpiadasHeader">Olímpiadas</a></li>
                     <li class="li-nav"><a href="/sobre" id="sobreHeader">Sobre</a></li>
@@ -67,31 +75,89 @@
             </select>
         </div>
     </header>
+    <main>
+        <!-- Botão de filtro mobile -->
+        <div class="filtro-mobile-container">
+            <button class="filtro-mobile-btn" id="filtroMobileBtn">
+                <i class="bi bi-funnel-fill"></i>
+                <span id="filtrar">Filtrar Olimpíadas</span>
+            </button>
+        </div>
 
-    <section>
-        <div id="main" class="content">
-            <div class="bem-vindo">
-                <h1 id="titulo">Bem vindo, estudante!</h1>
-                <p id="paragrafo">
-                    <span id="textoParagrafo">Ainda não encontrou uma olimpíada que seja a sua cara? A gente te ajuda filtrando todas as oportunidades do Brasil para atender aos seus interesses!</span>
-                    <u id="sublinhado">Rápido, fácil e gratuito:</u>
-                </p>
-                <p class="pesquise">
-                    <i class="las la-search" style="font-size: 24px;"></i>
-                    <span id="pesquise">Pesquise qualquer olimpíada por nome ou palavra-chave</span>
-                </p>
-                <form method="GET" action="{{ url_for('buscar') }}" id="search-form">
-                    <input type="text" class="searchBar" id="searchBar" name="pesquisa" placeholder="Pesquisar..." value="{{ request.args.get('pesquisa', '') }}">
-                    <button class="searchButton" type="submit"><i class="bi bi-search"></i></button>
-                </form>
-                <p class="magica">
-                    <i class="bi bi-star-fill"></i>
-                    <span id="magica">Ou selecione seus interesses em "Olimpíadas" e faremos a mágica acontecer</span>
-                </p>
+        <div class="filtro">
+            <div id="filtro">
+                <!-- Área do Conhecimento -->
+                <div class="area dropdown">
+                    <div class="titulo">
+                        <label id="areaConhecimento">Área do conhecimento</label>
+                        <i class="bi bi-plus dropdown-btn"></i>
+                    </div>
+                    <div class="dropdown-content">
+                        <button class="botao" id="exatas">Exatas</button>
+                        <button class="botao" id="tecnologia">Tecnologia</button>
+                        <button class="botao" id="linguagens">Linguagens</button>
+                        <button class="botao" id="humanas">Humanas</button>
+                        <button class="botao" id="interdiciplinaresOutros">Interdiciplinares e outros</button>
+                        <button class="botao" id="cienciasNatureza">Ciências da natureza</button>
+                    </div>
+                </div>
+                
+                <!-- Tipo de Inscrição -->
+                <div class="tipo dropdown">
+                    <div class="titulo">
+                        <label id="tipoInscricao">Tipo de Inscrição</label>
+                        <i class="bi bi-plus dropdown-btn"></i>
+                    </div>
+                    <div class="dropdown-content">
+                        <button class="botao" id="escola">Escola</button>
+                        <button class="botao" id="aluno">aluno</button>
+                    </div>
+                </div>
+                
+                <!-- Status -->
+                <div class="status dropdown">
+                    <div class="titulo">
+                        <label id="periodo">Período de Inscrição</label>
+                        <i class="bi bi-plus dropdown-btn"></i>
+                    </div>
+                    <div class="dropdown-content">
+                        <button class="botao" id="aberto">Aberto</button>
+                        <button class="botao" id="embreve">Em breve</button>
+                        <button class="botao" id="fechado">Fechado</button>
+                    </div>
+                </div>
+                
+                <!-- Nível -->
+                <div class="nivel dropdown">
+                    <div class="titulo">
+                        <label id="nivel">Nível</label>
+                        <i class="bi bi-plus dropdown-btn"></i>
+                    </div>
+                    <div class="dropdown-content">
+                        <button class="botao" id="fundamental1">Fundamental I</button>
+                        <button class="botao" id="fundamental2">Fundamental II</button>
+                        <button class="botao" id="ensinoMedio">Ensino médio | Técnico</button>
+                        <button class="botao" id="superior">Ensino superior</button>
+                        <button class="botao" id="livre">Livre</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
 
+        <div id="olimpiadas">
+            {% for item in olimpiadas_list %}
+                <div class="card">
+                    <div class="imagem {% if item.modo == 'manter' %}manter{% else %}preencher{% endif %}">
+                        <img src="{{ item.logo }}" alt="Logo">
+                    </div>
+                    <div class="tipo">
+                        <i class="bi bi-play-circle status-icon" data-status="{{ get_status(item) }}"></i>
+                    </div>
+                    <a href="{{ item.link }}">{{ item.abreviacao }}</a>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
     <script>
         // Menu Mobile
         const menuButton = document.getElementById('mobile-menu-button');
