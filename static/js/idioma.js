@@ -131,11 +131,11 @@ const textos = {
       tituloConheca:"Conheça a nossa equipe",
       paragrafoConheca:"Conheça a equipe dedicada por trás do Tudo Olimpíadas, composta por profissionais apaixonados por educação e conhecimento. Nossa equipe está empenhada em fornecer as melhores informações e orientações para os estudantes que buscam se destacar nas Olimpíadas de conhecimento.",
       searchBar: "Pesquisar...",
-      isabella: "CEO",
-      laila: "Diretora Criativa",
-      inae: "Segunda Diretora Técnica",
-      nicoly: "Diretora Técnica",
-      daniela: "Diretora de Marketing e Mídia"
+      cargo_isabella: "CEO",
+      cargo_laila: "Diretora Criativa",
+      cargo_inae: "Segunda Diretora Técnica",
+      cargo_nicoly: "Diretora Técnica",
+      cargo_daniela: "Diretora de Marketing e Mídia"
     },
     blog:{
       inicioHeader: "Início",
@@ -291,11 +291,11 @@ const textos = {
       tituloConheca:"Meet Our Team",
       paragrafoConheca:"Meet the dedicated team behind Tudo Olimpíadas, composed of professionals passionate about education and knowledge. Our team is committed to providing the best information and guidance for students who want to stand out in academic olympiads.",
       searchBar: "Search...",
-      isabella: "CEO",
-      laila: "Creative Director",
-      inae: "Secondary Technical Director",
-      nicoly: "Technical Director",
-      daniela: "Marketing and Media Director"
+      cargo_isabella: "CEO",
+      cargo_laila: "Creative Director",
+      cargo_inae: "Secondary Technical Director",
+      cargo_nicoly: "Technical Director",
+      cargo_daniela: "Marketing and Media Director"
     },
     blog:{
       inicioHeader: "Home",
