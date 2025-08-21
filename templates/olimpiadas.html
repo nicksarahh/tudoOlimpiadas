@@ -3,44 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tudo Olimpiadas</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/olimpiadas.css') }}">
+    <title>Tudo Olimpíadas | Olimpíadas</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/globo.ico') }}" media="(prefers-color-scheme: light)">
     <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/globo-branco.ico') }}" media="(prefers-color-scheme: dark)">
+
+    <!-- CSS do Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- Playfair Display font -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-
-    <!-- Avenir font -->
     <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="{{ url_for('static', filename='js/idioma.js') }}" defer></script>
+    <!-- CSS customizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/olimpiadas.css') }}">
 </head>
 <body>
     <header>
-        <!-- Botão Hamburger (visível apenas em mobile) -->
+        <!-- Botão Hamburger (mobile) -->
         <button id="mobile-menu-button" class="mobile-only" aria-label="Abrir menu" aria-expanded="false">
             <i class="bi bi-list"></i>
         </button>
-    
-        <!-- Logo (visível em todas as resoluções) -->
+
+        <!-- Logo -->
         <div id="leftSection" class="section">
             <a href="/" aria-label="Página inicial">
-                <img id="logo" src="{{url_for('static', filename='imagens/logo.jpg')}}" alt="Tudo Olimpíadas">
+                <img id="logo" src="{{ url_for('static', filename='imagens/logo.jpg') }}" alt="Tudo Olimpíadas">
             </a>
         </div>
-    
-        <!-- Menu Principal -->
+
+        <!-- Menu -->
         <div id="centerSection" class="section">
             <nav aria-label="Navegação principal">
                 <ul class="ul-nav">
-                     <!-- Seletor de Idiomas Mobile (visível apenas no menu mobile) -->
-                     <li class="li-nav mobile-only" id="mobile-language-selector">
+                    <li class="li-nav mobile-only" id="mobile-language-selector">
                         <form method="GET" action="{{ url_for('buscar') }}" id="search-form">
                             <input type="text" class="searchBar" id="searchBar" name="pesquisa" placeholder="Pesquisar..." value="{{ request.args.get('pesquisa', '') }}">
                             <button class="searchButton" type="submit"><i class="bi bi-search"></i></button>
@@ -50,8 +50,6 @@
                     <li class="li-nav"><a href="/olimpiadas" id="olimpiadasHeader">Olímpiadas</a></li>
                     <li class="li-nav"><a href="/sobre" id="sobreHeader">Sobre</a></li>
                     <li class="li-nav"><a href="/blog" id="blog">Blog</a></li>
-                    
-                    <!-- Seletor de Idiomas Mobile (visível apenas no menu mobile) -->
                     <li class="li-nav mobile-only" id="mobile-language-selector">
                         <select id="seletor-idioma-mobile" aria-label="Selecionar idioma">
                             <option value="pt">🇧🇷 Português</option>
@@ -61,8 +59,7 @@
                 </ul>
             </nav>
         </div>
-    
-        <!-- Seletor de Idiomas Desktop (visível apenas em desktop) -->
+
         <div id="rightSection" class="section desktop-only">
             <form method="GET" action="{{ url_for('buscar') }}" id="search-form">
                 <input type="text" class="searchBar" id="searchBar" name="pesquisa" placeholder="Pesquisar..." value="{{ request.args.get('pesquisa', '') }}">
@@ -74,59 +71,203 @@
             </select>
         </div>
     </header>
+
     <main>
-        <section id="left-right">
-            <h1 id="tituloOlimpiadas">Olimpiadas de Conhecimento</h1>
-            <div class="left-right">
-                <div id="left">
-                    <div id="introducao">
-                        <h2 id="tituloIntro">Introdução</h2>
-                        <p id="paragrafoIntro">As Olimpíadas de Conhecimento são competições educativas que envolvem estudantes de diferentes níveis escolares, desafiando-os em diversas áreas do saber, como matemática, física, química, biologia, língua portuguesa, geografia, entre outras. Elas são organizadas por instituições educacionais, científicas ou governamentais, com o objetivo de incentivar o estudo, desenvolver o raciocínio lógico, estimular o pensamento crítico e descobrir novos talentos. 
-                            Essas olimpíadas podem ser realizadas em nível municipal, estadual, nacional ou até internacional, e normalmente envolvem provas teóricas e práticas, dependendo da disciplina. Além de serem uma excelente oportunidade de aprendizado, elas também contribuem para a valorização do conhecimento e podem abrir portas para bolsas de estudo, participação em eventos acadêmicos e até intercâmbios.
-                            Participar de uma olimpíada do conhecimento é mais do que competir: é crescer, aprender e se desafiar constantemente.</p>
-                    </div>
-                </div>
-                <div id="right">
-                    <div id="porque">
-                        <h2 id="tituloPorque">Por que fazer olimpíadas?</h2>
-                        <p id="paragrafoPorque"> É inegável que as olimpíadas já transformaram a vida de várias pessoas ao redor do mundo. Viagens internacionais, amizades com pessoas de interesses parecidos, medalhas e muito conhecimento ganho são alguns dos benefícios que você pode ter participando nessas competições. Vários jovens mencionam o fato de que olimpíadas abrem portas para quem deseja crescer, pois elas permitem uma experiência acadêmica única. Dessa forma, torna-se difícil mencionar todos os motivos para entrar nesse mundo incrível, embora existam os mais comuns:</p>
-                        <ul>
-                            <li id="ponto1">Olimpíadas te desafiam!</li>
-                            <li id="ponto2">Olimpíadas abrem sua mente</li>
-                            <li id="ponto3">Experiências de vida incríveis</li>
-                            <li id="ponto4">Novos caminhos para o futuro</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <h1 id="explore">Explore nosso catálogo olímpico</h1>
         <section id="olimpiadas">
-            <div class="cima">    
-                <div id="categoria" ><a class="exatas categoria" href="/olimpiadas/exatas"></a><label class="categoria-text" id="exatas">Exatas</label></div>
-                <div id="categoria"><a class="tecnologia categoria"  href="/olimpiadas/tecnologia"></a><label class="categoria-text" id="tecnologia">Tecnologia</label></div>
+            <div class="cima">
+                <div id="categoria"><a class="exatas categoria" href="/olimpiadas/exatas"></a><label class="categoria-text" id="exatas">Exatas</label></div>
+                <div id="categoria"><a class="tecnologia categoria" href="/olimpiadas/tecnologia"></a><label class="categoria-text" id="tecnologia">Tecnologia</label></div>
                 <div id="categoria"><a class="linguagens categoria" href="/olimpiadas/linguagens"></a><label class="categoria-text" id="linguagens">Linguagens</label></div>
                 <div id="categoria"><a class="humanas categoria" href="/olimpiadas/humanas"></a><label class="categoria-text" id="humanas">Humanas</label></div>
             </div>
             <div class="baixo">
-                <div  id="categoria"><a class="interdiciplinaresOutros categoria" href="/olimpiadas/interdiciplinares-outros"></a><label class="categoria-text" id="interdiciplinaresOutros">Interdiciplinares e outros</label></div>
-                <div  id="categoria"><a class="cienciasNatureza categoria" href="/olimpiadas/ciencias-natureza"></a><label class="categoria-text" id="cienciasNatureza">Ciencias da Natureza</label></div>
+                <div id="categoria"><a class="interdiciplinaresOutros categoria" href="/olimpiadas/interdiciplinares-outros"></a><label class="categoria-text" id="interdiciplinaresOutros">Interdiciplinares e outros</label></div>
+                <div id="categoria"><a class="cienciasNatureza categoria" href="/olimpiadas/ciencias-natureza"></a><label class="categoria-text" id="cienciasNatureza">Ciências da Natureza</label></div>
             </div>
         </section>
-    </main>
-    <footer></footer>
+
+        <section class="mt-5">
+            <h1 class="mb-4" id="faq-title">🤔 FAQ: tudo sobre olimpíadas!</h1>
+            <div class="accordion accordion-flush" id="faqAccordion">
+
+                <div class="accordion accordion-flush" id="faqAccordion">
+
+          <!-- Pergunta 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" id="oque-pergunta">
+                🤷‍♀️O que são olimpíadas do conhecimento?
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" id="oque-resposta">
+                As olimpíadas do conhecimento são competições acadêmicas que avaliam o <strong>domínio dos estudantes em diversas áreas do saber</strong>. Elas podem ocorrer em diferentes formatos (questões fechadas ou abertas, projetos, redações, trabalhos em grupo, etc.) e etapas (municipais, estaduais, nacionais e até internacionais), destinando-se a alunos do ensino fundamental, médio e, em alguns casos, também superior. Nem sempre são gratuitas, mas muitas vezes as escolas arcam com os custos da inscrição de seus alunos. Além de melhorar o raciocínio e aprofundar os estudos, as olimpíadas oferecem <strong>prêmios, certificados, oportunidades acadêmicas (como bolsas de iniciação científica júnior) e até vagas em universidades</strong>.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" id="inscrever-pergunta">
+                📝Como se inscrever nas olimpíadas do conhecimento?
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" id="inscrever-resposta">
+                <p>Existem duas formas de inscrição:</p>
+                
+                <p><strong>1. Inscrição Institucional:</strong> a escola realiza o cadastro dos <strong>estudantes, geralmente com o apoio de um professor responsável</strong>. Esse modelo é adotado por muitas olimpíadas tradicionais e exige o envolvimento da instituição de ensino. Por isso, se você está interessado em participar de alguma dessas competições, como a ONC ou a OBA, procure por mais informações e repasse-as para a coordenação da sua escola, solicitando a sua inscrição.</p>
+                
+                <p><strong>2. Inscrição Individual:</strong> o próprio estudante realiza o cadastro <strong>diretamente no site da olimpíada, sem a necessidade de mediação pela escola</strong>. Esse formato costuma estar disponível para a maioria das olimpíadas, principalmente as online ou as menos famosas.</p>
+                
+                <p><strong>OBS:</strong> Algumas olimpíadas oferecem ambas as modalidades, permitindo flexibilidade para quem deseja participar por conta própria ou com apoio da escola.</p>
+                
+                <p><strong>Em nosso site, é possível filtrar as olimpíadas por tipo de inscrição, facilitando a busca por oportunidades adequadas a cada realidade!</strong></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" id="maiores-pergunta">
+                🤩Quais são as maiores olimpíadas do Brasil?
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" id="maiores-resposta">
+                <p>As maiores olimpíadas do Brasil são aquelas que concentram o maior número de participantes e abrangem todas as regiões do país. Por serem amplamente divulgadas e reconhecidas, também costumam ser as mais concorridas e aceitas em vagas olímpicas nas universidades. A seguir, destacam-se as principais olimpíadas de cada área do conhecimento:</p>
+                
+                <p><strong>🧮Ciências Exatas:</strong></p>
+                <ul>
+                  <li>OBMEP - Olimpíada Brasileira de Matemática das Escolas Públicas</li>
+                  <li>OBM - Olimpíada Brasileira de Matemática</li>
+                  <li>Concurso Canguru de Matemática</li>
+                </ul>
+                
+                <p><strong>🌱Ciências da Natureza:</strong></p>
+                <ul>
+                  <li>OBB - Olimpíada Brasileira de Biologia</li>
+                  <li>ONC - Olimpíada Nacional de Ciências</li>
+                  <li>OBA - Olimpíada Brasileira de Astronomia e Astronáutica</li>
+                  <li>OBQ - Olimpíada Brasileira de Química</li>
+                </ul>
+                
+                <p><strong>🗿Ciências Humanas:</strong></p>
+                <ul>
+                  <li>ONHB - Olimpíada Nacional em História do Brasil</li>
+                  <li>OBG - Olimpíada Brasileira de Geografia</li>
+                </ul>
+                
+                <p><strong>🗣️Linguagens:</strong></p>
+                <ul>
+                  <li>OLP - Olimpíada de Língua Portuguesa</li>
+                  <li>OBL - Olimpíada Brasileira de Linguística</li>
+                </ul>
+                
+                <p><strong>📱Tecnologia:</strong></p>
+                <ul>
+                  <li>OBI - Olimpíada Brasileira de Informática</li>
+                  <li>OBR - Olimpíada Brasileira de Robótica</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour" id="universidade-pergunta">
+                🎓Como entrar na universidade por vaga olímpica?
+              </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" id="universidade-resposta">
+                <p>As vagas olímpicas são uma forma de ingresso alternativa oferecida por algumas universidades, selecionando <strong>estudantes com alto desempenho em olimpíadas científicas</strong> - geralmente medalhistas ou com menções honrosas em fases nacionais. Esse tipo de ingresso dispensa a realização do vestibular tradicional, valorizando o histórico acadêmico e o comprometimento do jovem com a iniciação científica.</p>
+                
+                <p>Diversas instituições já adotam esse modelo, entre elas: UNICAMP, UFMG, UFRJ e UFF. Cada uma delas define critérios próprios, incluindo quais olimpíadas são aceitas, a pontuação mínima exigida e os cursos aplicáveis. Essas regras são publicadas nos editais de cada processo seletivo.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 5 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive" id="seletivas-pergunta">
+                🌎O que são as seletivas internacionais?
+              </button>
+            </h2>
+            <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" id="seletivas-resposta">
+                <p>As seletivas internacionais são processos classificatórios que têm como objetivo formar as equipes brasileiras que representarão o país em olimpíadas científicas internacionais.</p>
+                
+                <p>Ao contrário das olimpíadas tradicionais, essas seletivas não são abertas ao público em geral. Normalmente, estudantes que obteram alto desempenho nas olimpíadas nacionais são convidados a participar de fases dessas seletivas. Aqueles que passarem pelas diversas fases eliminatórias receberão um treinamento acadêmico intensivo e preparatório para as competições internacionais, em que irão viajar e representar o Brasil.</p>
+                
+                <p>Duas das seletivas mais conhecidas são:</p>
+                <ul>
+                  <li>A da OBA, que leva alunos para a OLAA (Olimpíada Latinoamericana de Astronomia e Astronáutica), para a OIAA (Olimpíada Internacional de Astronomia e Astrofísica) e para a IAO (Olimpíada Internacional Astronomia)</li>
+                  <li>A OBM, que é ao mesmo tempo uma olimpíada nacional (na qual só se entra por um convite, recebido pelos melhores classificados em outras competições) e uma seletiva para a IMO (Olimpíada Internacional de Matemática).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 6 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix" id="estudar-pergunta">
+                📚Onde estudar para as olimpíadas do conhecimento?
+              </button>
+            </h2>
+            <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" id="estudar-resposta">
+                <p>O primeiro passo para se preparar para uma olimpíada do conhecimento é consultar, no seu edital, os conteúdos que poderão ser cobrados nas provas e verificar quais deles você ainda não dominou. Depois de trabalhar nesses assuntos e revisar o restante, também é importante realizar as provas dos anos anteriores para simular o seu desempenho. Ademais, uma boa estratégia é participar de grupos de estudo e assistir aulões/lives de revisão, que muitas vezes são promovidos pelas próprias olimpíadas.</p>
+                
+                <p>Caso seja possível, recomendamos que você utilize seus próprios materiais escolares durante esses estudos, como livros didáticos e materiais recomendados pelos professores. No entanto, há também diversas <strong>alternativas gratuitas online</strong>, como:</p>
+                
+                <ul>
+                  <li><strong>NOIC (Núcleo Olímpico de Incentivo ao Conhecimento)</strong> - site que oferece mentorias on-line, materiais de estudo e grupos de apoio para participantes de diversas olimpíadas;</li>
+                  <li><strong>Pitagóricos</strong> - projeto que oferece, em suas redes sociais, materiais preparatórios para olimpíadas de exatas e de ciências da natureza, contando com grupos de mentoria no WhatsApp;</li>
+                  <li><strong>Khan Academy</strong> - plataforma digital para aprender conteúdos de quase todas as disciplinas, com videoaulas, atividades e simulados;</li>
+                  <li><strong>Canais do YouTube focados em olimpíadas do conhecimento</strong> - Portal da Matemática Canal da OBMEP, Insight Edu (matemática e astronomia), Fiori Pets (biologia), Virando Olímpico (física), etc;</li>
+                  <li><strong>Canais do YouTube para estudos em geral</strong> - Me Salva! (interdisciplinar), Politize! (ciências humanas), Ponto em Comum (interdisciplinar), Drauzio Varella (saúde), Nerdologia (ciências humanas), Paulo Jubilut (biologia), Brasil Escola (interdisciplinar), etc.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </section>
+      </main>
+<hr>
+    <footer>
+        <div class="footer">
+            <img id="logo-footer" src="{{ url_for('static', filename='imagens/logo.jpg') }}" alt="Tudo Olimpíadas">
+            <div id="icons-contato">
+                <i class="bi bi-envelope-fill" id="email"><label>tudoolimpiadas@hotmail.com</label></i>
+                <i class="bi bi-instagram" id="insta"><label>@tudoolimpiadas</label></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS do Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script menu mobile -->
+    <script src="{{ url_for('static', filename='js/idioma.js') }}" defer></script>
     <script>
-        // Menu Mobile
         const menuButton = document.getElementById('mobile-menu-button');
         const navMenu = document.querySelector('.ul-nav');
-        
+
         if (menuButton && navMenu) {
             menuButton.addEventListener('click', (e) => {
                 e.stopPropagation();
                 navMenu.classList.toggle('active');
                 menuButton.setAttribute('aria-expanded', navMenu.classList.contains('active'));
             });
-            
-            // Fechar ao clicar fora
+
             document.addEventListener('click', (e) => {
                 if (!navMenu.contains(e.target) && e.target !== menuButton) {
                     navMenu.classList.remove('active');
@@ -134,6 +275,184 @@
                 }
             });
         }
+    </script>
+    <script>
+        // Conteúdo em Português
+        const portugueseContent = {
+            "faq-title": "🤔 FAQ: tudo sobre olimpíadas!",
+            "oque-pergunta": "🤷‍♀️ O que são olimpíadas do conhecimento?",
+            "oque-resposta": `As olimpíadas do conhecimento são competições acadêmicas que avaliam o <strong>domínio dos estudantes em diversas áreas do saber</strong>. Elas podem ocorrer em diferentes formatos (questões fechadas ou abertas, projetos, redações, trabalhos em grupo, etc.) e etapas (municipais, estaduais, nacionais e até internacionais), destinando-se a alunos do ensino fundamental, médio e, em alguns casos, também superior. Nem sempre são gratuitas, mas muitas vezes as escolas arcam com os custos da inscrição de seus alunos. Além de melhorar o raciocínio e aprofundar os estudos, as olimpíadas oferecem <strong>prêmios, certificados, oportunidades acadêmicas (como bolsas de iniciação científica júnior) e até vagas em universidades</strong>.`,
+            
+            "inscrever-pergunta": "📝 Como se inscrever nas olimpíadas do conhecimento?",
+            "inscrever-resposta": `<p>Existem duas formas de inscrição:</p>
+                <p><strong>1. Inscrição Institucional:</strong> a escola realiza o cadastro dos <strong>estudantes, geralmente com o apoio de um professor responsável</strong>. Esse modelo é adotado por muitas olimpíadas tradicionais e exige o envolvimento da instituição de ensino. Por isso, se você está interessado em participar de alguma dessas competições, como a ONC ou a OBA, procure por mais informações e repasse-as para a coordenação da sua escola, solicitando a sua inscrição.</p>
+                <p><strong>2. Inscrição Individual:</strong> o próprio estudante realiza o cadastro <strong>diretamente no site da olimpíada, sem a necessidade de mediação pela escola</strong>. Esse formato costuma estar disponível para a maioria das olimpíadas, principalmente as online ou as menos famosas.</p>
+                <p><strong>OBS:</strong> Algumas olimpíadas oferecem ambas as modalidades, permitindo flexibilidade para quem deseja participar por conta própria ou com apoio da escola.</p>
+                <p><strong>Em nosso site, é possível filtrar as olimpíadas por tipo de inscrição, facilitando a busca por oportunidades adequadas a cada realidade!</strong></p>`,
+            
+            "maiores-pergunta": "🤩 Quais são as maiores olimpíadas do Brasil?",
+            "maiores-resposta": `<p>As maiores olimpíadas do Brasil são aquelas que concentram o maior número de participantes e abrangem todas as regiões do país. Por serem amplamente divulgadas e reconhecidas, também costumam ser as mais concorridas e aceitas em vagas olímpicas nas universidades. A seguir, destacam-se as principais olimpíadas de cada área do conhecimento:</p>
+                <p><strong>🧮 Ciências Exatas:</strong></p>
+                <ul>
+                    <li>OBMEP - Olimpíada Brasileira de Matemática das Escolas Públicas</li>
+                    <li>OBM - Olimpíada Brasileira de Matemática</li>
+                    <li>Concurso Canguru de Matemática</li>
+                </ul>
+                <p><strong>🌱 Ciências da Natureza:</strong></p>
+                <ul>
+                    <li>OBB - Olimpíada Brasileira de Biologia</li>
+                    <li>ONC - Olimpíada Nacional de Ciências</li>
+                    <li>OBA - Olimpíada Brasileira de Astronomia e Astronáutica</li>
+                    <li>OBQ - Olimpíada Brasileira de Química</li>
+                </ul>
+                <p><strong>🗿 Ciências Humanas:</strong></p>
+                <ul>
+                    <li>ONHB - Olimpíada Nacional em História do Brasil</li>
+                    <li>OBG - Olimpíada Brasileira de Geografia</li>
+                </ul>
+                <p><strong>🗣️ Linguagens:</strong></p>
+                <ul>
+                    <li>OLP - Olimpíada de Língua Portuguesa</li>
+                    <li>OBL - Olimpíada Brasileira de Linguística</li>
+                </ul>
+                <p><strong>📱 Tecnologia:</strong></p>
+                <ul>
+                    <li>OBI - Olimpíada Brasileira de Informática</li>
+                    <li>OBR - Olimpíada Brasileira de Robótica</li>
+                </ul>`,
+            
+            "universidade-pergunta": "🎓 Como entrar na universidade por vaga olímpica?",
+            "universidade-resposta": `<p>As vagas olímpicas são uma forma de ingresso alternativa oferecida por algumas universidades, selecionando <strong>estudantes com alto desempenho em olimpíadas científicas</strong> - geralmente medalhistas ou com menções honrosas em fases nacionais. Esse tipo de ingresso dispensa a realização do vestibular tradicional, valorizando o histórico acadêmico e o comprometimento do jovens com a iniciação científica.</p>
+                <p>Diversas instituições já adotam esse modelo, entre elas: UNICAMP, UFMG, UFRJ e UFF. Cada uma delas define critérios próprios, incluindo quais olimpíadas são aceitas, a pontuação mínima exigida e os cursos aplicáveis. Essas regras são publicadas nos editais de cada processo seletivo.</p>`,
+            
+            "seletivas-pergunta": "🌎 O que são as seletivas internacionais?",
+            "seletivas-resposta": `<p>As seletivas internacional são processos classificatórios que têm como objetivo formar as equipes brasileiras que representarão o país em olimpíadas científicas internacionais.</p>
+                <p>Ao contrário das olimpíadas tradicionais, essas seletivas não são abertas ao público em geral. Normalmente, estudantes que obteram alto desempenho nas olimpíadas nacionais são convidados a participar de fases dessas seletivas. Aqueles que passarem pelas diversas fases eliminatórias receberão um treinamento acadêmico intensivo e preparatório para as competições internacionais, em que irão viajar e representar o Brasil.</p>
+                <p>Duas das seletivas mais conhecidas são:</p>
+                <ul>
+                    <li>A da OBA, que leva alunos para a OLAA (Olimpíada Latinoamericana de Astronomia e Astronáutica), para a OIAA (Olimpíada Internacional de Astronomia e Astrofísica) e para a IAO (Olimpíada Internacional Astronomia)</li>
+                    <li>A OBM, que é ao mesmo tempo uma olimpíada nacional (na qual só se entra por um convite, recebido pelos melhores classificados em outras competições) e uma seletiva para a IMO (Olimpíada Internacional de Matemática).</li>
+                </ul>`,
+            
+            "estudar-pergunta": "📚 Onde estudar para as olimpíadas do conhecimento?",
+            "estudar-resposta": `<p>O primeiro passo para se preparar para uma olimpíada do conhecimento é consultar, no seu edital, os conteúdos que poderão ser cobrados nas provas e verificar quais deles você ainda não dominou. Depois de trabalhar nesses assuntos e revisar o restante, também é importante realizar as provas dos anos anteriores para simular o seu desempenho. Ademais, uma boa estratégia é participar de grupos de estudo e assistir aulões/lives de revisão, que muitas vezes são promovidos pelas próprias olimpíadas.</p>
+                <p>Caso seja possível, recomendamos que você utilize seus próprios materiais escolares durante esses estudos, como livros didáticos e materiais recomendados pelos professores. No entanto, há também diversas <strong>alternativas gratuitas online</strong>, como:</p>
+                <ul>
+                    <li><strong>NOIC (Núcleo Olímpico de Incentivo ao Conhecimento)</strong> - site que oferece mentorias on-line, materiais de estudo e grupos de apoio para participantes de diversas olimpíadas;</li>
+                    <li><strong>Pitagóricos</strong> - projeto que oferece, em suas redes sociais, materiais preparatórios para olimpíadas de exatas e de ciências da natureza, contando com grupos de mentoria no WhatsApp;</li>
+                    <li><strong>Khan Academy</strong> - plataforma digital para aprender conteúdos de quase todas as disciplinas, com videoaulas, atividades e simulados;</li>
+                    <li><strong>Canais do YouTube focados em olimpíadas do conhecimento</strong> - Portal da Matemática Canal da OBMEP, Insight Edu (matemática e astronomia), Fiori Pets (biologia), Virando Olímpico (física), etc;</li>
+                    <li><strong>Canais do YouTube para estudos em geral</strong> - Me Salva! (interdisciplinar), Politize! (ciências humanas), Ponto em Comum (interdisciplinar), Drauzio Varella (saúde), Nerdologia (ciências humanas), Paulo Jubilut (biologia), Brasil Escola (interdisciplinar), etc.</li>
+                </ul>`
+        };
+
+        // Conteúdo em Inglês
+        const englishContent = {
+            "faq-title": "🤔 FAQ: everything about olympiads!",
+            "oque-pergunta": "🤷‍♀️ What are knowledge olympiads?",
+            "oque-resposta": `Knowledge olympiads are academic competitions that evaluate <strong>students' mastery in various areas of knowledge</strong>. They can occur in different formats (multiple-choice or open-ended questions, projects, essays, group work, etc.) and stages (municipal, state, national, and even international), targeting elementary, high school, and in some cases, university students. They are not always free, but often schools cover their students' registration costs. Besides improving reasoning and deepening studies, olympiads offer <strong>prizes, certificates, academic opportunities (such as junior scientific initiation scholarships) and even university spots</strong>.`,
+            
+            "inscrever-pergunta": "📝 How to register for knowledge olympiads?",
+            "inscrever-resposta": `<p>There are two registration methods:</p>
+                <p><strong>1. Institutional Registration:</strong> the school registers the <strong>students, usually with the support of a responsible teacher</strong>. This model is adopted by many traditional olympiads and requires the involvement of the educational institution. Therefore, if you're interested in participating in any of these competitions, such as ONC or OBA, look for more information and pass it on to your school's coordination, requesting your registration.</p>
+                <p><strong>2. Individual Registration:</strong> the student themselves registers <strong>directly on the olympiad's website, without the need for school mediation</strong>. This format is usually available for most olympiads, especially online or less famous ones.</p>
+                <p><strong>NOTE:</strong> Some olympiads offer both modalities, allowing flexibility for those who want to participate on their own or with school support.</p>
+                <p><strong>On our website, you can filter olympiads by registration type, making it easier to search for opportunities suitable for each reality!</strong></p>`,
+            
+            "maiores-pergunta": "🤩 What are the largest olympiads in Brazil?",
+            "maiores-resposta": `<p>The largest olympiads in Brazil are those that concentrate the highest number of participants and cover all regions of the country. Because they are widely publicized and recognized, they also tend to be the most competitive and accepted in olympic vacancies at universities. Below are the main olympiads in each knowledge area:</p>
+                <p><strong>🧮 Exact Sciences:</strong></p>
+                <ul>
+                    <li>OBMEP - Brazilian Public School Math Olympiad</li>
+                    <li>OBM - Brazilian Math Olympiad</li>
+                    <li>Kangaroo Math Contest</li>
+                </ul>
+                <p><strong>🌱 Natural Sciences:</strong></p>
+                <ul>
+                    <li>OBB - Brazilian Biology Olympiad</li>
+                    <li>ONC - National Science Olympiad</li>
+                    <li>OBA - Brazilian Astronomy and Astronautics Olympiad</li>
+                    <li>OBQ - Brazilian Chemistry Olympiad</li>
+                </ul>
+                <p><strong>🗿 Human Sciences:</strong></p>
+                <ul>
+                    <li>ONHB - National History of Brazil Olympiad</li>
+                    <li>OBG - Brazilian Geography Olympiad</li>
+                </ul>
+                <p><strong>🗣️ Languages:</strong></p>
+                <ul>
+                    <li>OLP - Portuguese Language Olympiad</li>
+                    <li>OBL - Brazilian Linguistics Olympiad</li>
+                </ul>
+                <p><strong>📱 Technology:</strong></p>
+                <ul>
+                    <li>OBI - Brazilian Informatics Olympiad</li>
+                    <li>OBR - Brazilian Robotics Olympiad</li>
+                </ul>`,
+            
+            "universidade-pergunta": "🎓 How to enter university through an olympic vacancy?",
+            "universidade-resposta": `<p>Olympic vacancies are an alternative form of admission offered by some universities, selecting <strong>students with high performance in scientific olympiads</strong> - usually medalists or with honorable mentions in national stages. This type of admission exempts students from taking the traditional entrance exam, valuing academic history and the young person's commitment to scientific initiation.</p>
+                <p>Several institutions already adopt this model, including: UNICAMP, UFMG, UFRJ and UFF. Each of them defines their own criteria, including which olympiads are accepted, the minimum score required and applicable courses. These rules are published in the notices of each selection process.</p>`,
+            
+            "seletivas-pergunta": "🌎 What are international selections?",
+            "seletivas-resposta": `<p>International selections are qualifying processes that aim to form the Brazilian teams that will represent the country in international scientific olympiads.</p>
+                <p>Unlike traditional olympiads, these selections are not open to the general public. Normally, students who obtained high performance in national olympiads are invited to participate in stages of these selections. Those who pass through the various eliminatory stages will receive intensive academic training and preparation for international competitions, where they will travel and represent Brazil.</p>
+                <p>Two of the best-known selections are:</p>
+                <ul>
+                    <li>OBA's, which takes students to OLAA (Latin American Astronomy and Astronautics Olympiad), to IOAA (International Olympiad on Astronomy and Astrophysics) and to IAO (International Astronomy Olympiad)</li>
+                    <li>OBM, which is both a national olympiad (which can only be entered by invitation, received by the top ranked in other competitions) and a selection for IMO (International Mathematical Olympiad).</li>
+                </ul>`,
+            
+            "estudar-pergunta": "📚 Where to study for knowledge olympiads?",
+            "estudar-resposta": `<p>The first step to prepare for a knowledge olympiad is to check, in its notice, the contents that may be covered in the tests and verify which ones you haven't mastered yet. After working on these subjects and reviewing the rest, it's also important to take tests from previous years to simulate your performance. Furthermore, a good strategy is to participate in study groups and watch review classes/lives, which are often promoted by the olympiads themselves.</p>
+                <p>If possible, we recommend that you use your own school materials during these studies, such as textbooks and materials recommended by teachers. However, there are also several <strong>free online alternatives</strong>, such as:</p>
+                <ul>
+                    <li><strong>NOIC (Olympic Center for Knowledge Incentive)</strong> - website that offers online mentoring, study materials and support groups for participants of various olympiads;</li>
+                    <li><strong>Pitagóricos</strong> - project that offers, on its social networks, preparatory materials for exact sciences and natural sciences olympiads, with WhatsApp mentoring groups;</li>
+                    <li><strong>Khan Academy</strong> - digital platform to learn content from almost all subjects, with video lessons, activities and mock tests;</li>
+                    <li><strong>YouTube channels focused on knowledge olympiads</strong> - Portal da Matemática Canal da OBMEP, Insight Edu (mathematics and astronomy), Fiori Pets (biology), Virando Olímpico (physics), etc;</li>
+                    <li><strong>YouTube channels for general studies</strong> - Me Salva! (interdisciplinary), Politize! (human sciences), Ponto em Comum (interdisciplinary), Drauzio Varella (health), Nerdologia (human sciences), Paulo Jubilut (biology), Brasil Escola (interdisciplinary), etc.</li>
+                </ul>`
+        };
+
+        // Função para alterar o idioma
+        function changeLanguage(language) {
+            const content = language === 'portuguese' ? portugueseContent : englishContent;
+            
+            // Atualiza o conteúdo de todos os elementos
+            for (const id in content) {
+                const element = document.getElementById(id);
+                if (element) {
+                    if (id.includes('pergunta')) {
+                        element.textContent = content[id];
+                    } else {
+                        element.innerHTML = content[id];
+                    }
+                }
+            }
+            
+            // Atualiza o texto do cabeçalho
+            document.querySelector('.header h1').textContent = language === 'portuguese' 
+                ? '🤔 FAQ: tudo sobre olimpíadas!' 
+                : '🤔 FAQ: everything about olympiads!';
+                
+            document.querySelector('.header p').textContent = language === 'portuguese' 
+                ? 'Selecione o idioma para visualizar o conteúdo' 
+                : 'Select the language to view the content';
+                
+            document.querySelector('.footer p').textContent = language === 'portuguese' 
+                ? '© 2023 FAQ Olimpíadas - Todos os direitos reservados' 
+                : '© 2023 FAQ Olympiads - All rights reserved';
+        }
+
+        // Adiciona event listeners aos botões
+        document.getElementById('btn-portuguese').addEventListener('click', function() {
+            changeLanguage('portuguese');
+        });
+
+        document.getElementById('btn-english').addEventListener('click', function() {
+            changeLanguage('english');
+        });
     </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tudo Olimpiadas</title>
+    <title>Tudo Olimpíadas | Sobre</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/sobre.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/globo.ico') }}" media="(prefers-color-scheme: light)">
     <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/globo-branco.ico') }}" media="(prefers-color-scheme: dark)">
@@ -74,7 +74,7 @@
             </select>
         </div>
     </header>
-    <main>
+    <main id="main">
         <section>
             <div id="sobre">
                 <h1 id="tituloSobre">Sobre nós</h1>
@@ -90,41 +90,56 @@
                 <p id="paragrafoConheca">Conheça a equipe dedicada por trás do Tudo Olimpíadas, composta por profissionais apaixonados por educação e conhecimento. Nossa equipe está empenhada em fornecer as melhores informações e orientações para os estudantes que buscam se destacar nas Olimpíadas de conhecimento.</p>
             </div>
             <div>
-                <div class="isabella">
-                    <div class="pessoa">
-                        <div class="foto foto-isabella"></div>
+                <div class="pessoa">
+                    <div class="foto foto-isabella"></div>
+                    <div class="descricao">
                         <h3 id="name">Isabella de Castro Castellani</h3>
+                        <label id="cargo">CEO</label>
                     </div>
                 </div>
-                <hr></hr>
-                    <div class="laila">
-                        <div class="pessoa">
-                            <div class="foto foto-laila"></div>
-                            <h3 id="name">Laila Domingues Simões</h3>
-                        </div>
-                    </div>
-                <hr></hr>
-                <div class="inae-nicoly">
-                    <div id="inae-nicoly">
-                        <div class="pessoa">
-                            <div class="foto foto-inae"></div>
-                            <h3 id="name">Inaê Dutra Barbosa</h3>
-                        </div>
-                        <div class="pessoa">
-                            <div class="foto foto-nicoly"></div>
-                            <h3 id="name">Nicoly Sarah Feltri Teixeira</h3>
-                        </div>
+                <div class="pessoa">
+                    <div class="foto foto-laila"></div>
+                    <div class="descricao">
+                        <h3 id="name">Laila Domingues Simões</h3>
+                        <label id="cargo">Creative Director</label>
                     </div>
                 </div>
-                <div class="daniela">
-                    <div class="pessoa">
-                        <div class="foto foto-daniela"></div>
+                <div class="pessoa">
+                    <div class="foto foto-nicoly"></div>
+                    <div class="descricao">
+                        <h3 id="name">Nicoly Sarah Feltri Teixeira</h3>
+                        <label id="cargo">Technical Director</label>
+                    </div>
+                </div>
+                <div class="pessoa">
+                    <div class="foto foto-inae"></div>
+                    <div class="descricao">
+                        <h3 id="name">Inaê Dutra Barbosa</h3>
+                        <label id="cargo">Secondary Technical Director</label>
+                    </div>
+                </div>
+                <div class="pessoa">
+                    <div class="foto foto-daniela"></div>
+                    <div class="descricao">
                         <h3 id="name">Daniela Oliveira Brotherhood</h3>
+                        <label id="cargo">Marketing and Media Director</label>
                     </div>
                 </div>
             </div>
+            <hr></hr>
         </section>
+        
     </main>
+    
+    <footer>
+        <div class="footer">
+             <img id="logo-footer" src="{{url_for('static', filename='imagens/logo.jpg')}}" alt="Tudo Olimpíadas">
+            <div id="icons-contato">
+                <i class="bi bi-envelope-fill" id="email"><label>tudoolimpiadas@hotmail.com</label></i>
+                <i class="bi bi-instagram" id="insta"><label>@tudoolimpiadas</label></i>
+            </div>
+        </div>
+    </footer>
     <script>
         // Menu Mobile
         const menuButton = document.getElementById('mobile-menu-button');

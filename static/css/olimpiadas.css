@@ -21,6 +21,10 @@ body {
     font-family: var(--paragrafo);
 }
 
+body:has(.ul-nav.active) {
+    overflow: hidden;
+}
+
 /* ===== CLASSES DE CONTROLE RESPONSIVO ===== */
 .mobile-only {
     display: none !important;
@@ -48,7 +52,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background: white;
-    position: relative;
+    position: fixed;
     z-index: 10;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
@@ -72,9 +76,14 @@ header {
     transition: all 0.3s ease;
 }
 
+#logo:focus-visible {
+    outline: none !important;
+    border: none !important;
+}
+
 #logo:focus {
-    outline: none;
-    border-color: transparent;
+    outline: none !important;
+    border: none !important;
 }
 
 #centerSection {
@@ -211,52 +220,19 @@ form {
     font-size: 18px;
 }
 
-#left-right{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
+main{
+    margin-top: 100px;
 }
 
-#left-right h1{
+#explore{
+    font-size: 49px;
     font-family: var(--cabeçalho);
-    font-size: 66px;
-    font-weight: 400;
-    color: #000587;
-}
-
-.left-right{
+    color: var(--azul);
+    margin: 60px 0;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 100%;
-    padding: 30px 20%;
-    box-sizing: border-box;
+    justify-content: center;
 }
 
-#left, #right{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-    flex-wrap: wrap;
-    width: 50%;
-    font-size: 16px;
-    font-weight: 400;
-    font-family: var(--paragrafo);
-}
-
-#left{
-    margin-right: 40px;
-}
-
-#left h2, #right h2{
-    margin-bottom: 20px;
-    font-family: var(--avenir);
-    font-size: 36px;
-    color: var(--laranja);
-}
 #olimpiadas {
     display: flex;
     flex-direction: column; /* cima e baixo um embaixo do outro */
@@ -344,6 +320,70 @@ form {
    background-position: center;
 }
 
+.mt-5{
+    margin: 100px 20%;
+}
+
+.mt-5 h1{
+    font-size: 35px;
+    font-family: var(--avenir);
+    text-align: center;
+    color: var(--laranja);
+}
+
+.accordion-item, .accordion-button{
+    font-family: var(--avenir) !important;
+    font-size: 15px;
+}
+
+footer{
+    display: flex;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200px !important;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#logo-footer{
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+/* .footer label{
+    font-size: 35px;
+    font-family: var(--cabeçalho);
+} */
+
+#icons-contato{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+}
+
+#insta, #email{
+    display: flex;
+    font-size: 15px;
+    color: #666;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+#insta label, #email label{
+    margin-left: 5px;
+}
+
+hr{
+    margin: 0px 50px 0px;
+}
+
 /* ===== RESPONSIVIDADE ===== */
 @media (min-width: 900px) and (max-width: 1200px) {
 /* Header */
@@ -429,6 +469,10 @@ form {
     padding-top: 20px;
     padding-left: 30px;
 }
+
+#icons-contato{
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 899px) {
@@ -488,30 +532,13 @@ form {
     }
 
     /* Conteúdo */
-    #left-right h1 {
-        font-size: 30px;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    
-    #left h2, #right h2 {
-        font-size: 1.5rem;
-        margin-top: 15px;
-    }
 
-    .left-right{
-        width: 100%;
-        flex-direction: column;
-        padding-left: 10%;
-        padding-right: 10%;
-        box-sizing: border-box;
-    }
-
-    #introducao{
-        width: 100vw;
+    #explore{
+        font-size: 37px;
+        margin: 50px 30px;
         display: flex;
-        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
     }
     
     .cima, .baixo {
@@ -532,46 +559,46 @@ form {
         box-sizing: border-box;
     }
 
-    #introducao {
-        width: 100%;
-        max-width: 100%;
-        display: flex;
-        flex-direction: column; /* Melhor que flex-wrap para conteúdo linear */
-        padding: 0; /* Remove qualquer padding interno */
+    .mt-5{
+        margin: auto 19px;
     }
 
-    #paragrafoIntro {
-        width: 100%;
-        max-width: 100%;
-        word-wrap: break-word; /* Garante que o texto não ultrapasse */
-        margin-bottom: 10px;
+    hr{
+        margin: auto 19px;
     }
 
-    /* Ajuste adicional para garantir que os elementos filhos expandam */
-    #introducao > * {
-        width: 100%;
-        box-sizing: border-box;
+    .mb-4{
+        font-size: 27px !important;
     }
 
-    #porque ul{
-        padding-top: 20px;
-        padding-left: 30px;
+    .accordion-item, .accordion-button{
+        font-size: 15px;
     }
+
+    .footer{
+        margin: 50px auto;
+    }
+
+    #icons-contato{
+        flex-direction: column;
+    }
+
 }
 
 @media (min-width: 1920px) {
+     /* HEADER */
     header{
-        height: 600px;
+        min-height: 130px;
     }
     
     
     #logo {
         width: auto;
-        height: 180px;
+        height: 110px;
     }
 
     #centerSection a{
-        font-size: 25px;
+        font-size: 21px;
         gap: 30px;
     }
 
@@ -580,12 +607,50 @@ form {
     }
 
     #rightSection select{
-        font-size: 25px;
+        font-size: 21px;
     }
 
     #rightSection option{
         font-size: 15px;
     }
+
+    .searchBar{
+        font-size: 23px;
+    }
+
+    .searchButton i{
+        font-size: 23px;
+    }
+
+    /* MAIN */
+
+    #main{
+        margin-top: 130px;
+    }
+
+    .accordion-item, .accordion-button{
+        font-size: 19px;
+    }
+
+
+    .categoria{
+        width: 128px;
+        height: 128px;
+    }
+
+    .categoria-text{
+        font-size: 19px;
+    }
+
+    /* FOOTER */
+    #logo-footer{
+        width: 256px;
+    }
+
+    #insta, #email{
+        font-size: 20px;
+    }
+
 }
 
 

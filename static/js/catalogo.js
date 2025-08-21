@@ -76,7 +76,10 @@ document.addEventListener('DOMContentLoaded', function() {
         fundamental2: { param: 'quem_pode', value: 'f2' },
         ensinoMedio: { param: 'quem_pode', value: 'em' },
         superior: { param: 'quem_pode', value: 'sup' },
-        livre: { param: 'quem_pode', value: 'livre' }
+        livre: { param: 'quem_pode', value: 'livre' },
+
+        // Formato
+        online: { param: 'online', value: 'true' }
     };
 
     async function applyFilters() {

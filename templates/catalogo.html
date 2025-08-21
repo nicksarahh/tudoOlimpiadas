@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tudo Olimpiadas</title>
+    <title>Tudo Olimpíadas | Catalogo</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/catalogo.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/globo.ico') }}" media="(prefers-color-scheme: light)">
     <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/globo-branco.ico') }}" media="(prefers-color-scheme: dark)">
@@ -153,7 +153,7 @@
                 <!-- Status -->
                 <div class="status dropdown">
                     <div class="titulo">
-                        <label id="status">Status</label>
+                        <label id="periodo">Período de Inscrição</label>
                         <i class="bi bi-plus dropdown-btn"></i>
                     </div>
                     <div class="dropdown-content">
@@ -177,6 +177,15 @@
                         <button class="botao" id="livre">Livre</button>
                     </div>
                 </div>
+                <div class="formato dropdown">
+                    <div class="titulo">
+                        <label id="areaConhecimento">Formato</label>
+                        <i class="bi bi-plus dropdown-btn"></i>
+                    </div>
+                    <div class="dropdown-content">
+                        <button class="botao" id="online">100% online</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -194,6 +203,16 @@
             {% endfor %}
         </div>
     </main>
+    <hr></hr>
+       <footer>
+        <div class="footer">
+             <img id="logo-footer" src="{{url_for('static', filename='imagens/logo.jpg')}}" alt="Tudo Olimpíadas">
+            <div id="icons-contato">
+                <i class="bi bi-envelope-fill" id="email"><label>tudoolimpiadas@hotmail.com</label></i>
+                <i class="bi bi-instagram" id="insta"><label>@tudoolimpiadas</label></i>
+            </div>
+        </div>
+    </footer>
     <script>
         // Menu Mobile
         const menuButton = document.getElementById('mobile-menu-button');

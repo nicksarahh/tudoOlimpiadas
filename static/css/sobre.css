@@ -21,6 +21,10 @@ body {
     font-family: var(--paragrafo);
 }
 
+body:has(.ul-nav.active) {
+    overflow: hidden;
+}
+
 /* ===== CLASSES DE CONTROLE RESPONSIVO ===== */
 .mobile-only {
     display: none !important;
@@ -48,7 +52,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background: white;
-    position: relative;
+    position: fixed;
     z-index: 10;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
@@ -72,9 +76,14 @@ header {
     transition: all 0.3s ease;
 }
 
+#logo:focus-visible {
+    outline: none !important;
+    border: none !important;
+}
+
 #logo:focus {
-    outline: none;
-    border-color: transparent;
+    outline: none !important;
+    border: none !important;
 }
 
 #centerSection {
@@ -213,7 +222,8 @@ form {
 
   
 main{
-    margin: 50px 50px;
+    margin: 150px 50px 0px;
+    margin-top: 100px;
 }
 
 h1{
@@ -258,7 +268,6 @@ h2{
     font-family: var(--cabeçalho);
     font-size: 46px;
     font-weight: 400;
-    margin-left: 30px;
 }
 
 /* Fotos Redondas (Solução Aprimorada) */
@@ -278,14 +287,27 @@ h2{
     display: flex;
     align-items: center;
     margin: 30px 0;
+    margin-left: 20%;
     gap: 20px; /* Espaço entre foto e texto */
     flex-wrap: wrap; /* Permite quebra em mobile */
 }
 
+.descricao{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-left: 30px;
+}
+
+#cargo{
+    font-size: 16px;
+    font-family: var(--paragrafo);
+}
+
 /* Alinhamentos Específicos */
 .isabella .pessoa {
-    justify-content: flex-end;
-    text-align: right;
+    justify-content: flex-start;
+    text-align: left;
 }
 
 .laila .pessoa, 
@@ -295,8 +317,8 @@ h2{
 }
 
 .inae-nicoly .pessoa {
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
 }
 
 #inae-nicoly{
@@ -331,6 +353,7 @@ h2{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
+    /* margin-left: 30px; */
 }
 
 .foto-daniela{
@@ -338,6 +361,50 @@ h2{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
+}
+
+footer{
+    display: flex;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200px !important;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#logo-footer{
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+/* .footer label{
+    font-size: 35px;
+    font-family: var(--cabeçalho);
+} */
+
+#icons-contato{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+}
+
+#insta, #email{
+    display: flex;
+    font-size: 15px;
+    color: #666;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+#insta label, #email label{
+    margin-left: 5px;
 }
 
 /* ===== RESPONSIVIDADE ===== */
@@ -368,6 +435,11 @@ h2{
 
 .ul-nav.active {
     left: 0;
+        
+}
+
+body:has(.ul-nav.active) {
+    overflow: hidden;
 }
 
 .li-nav {
@@ -395,9 +467,14 @@ h2{
     width: 100%;
     padding: 10px;
     margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* Conteúdo */
+.pessoa{
+    margin-left: 0px;
+}
 
 }
 
@@ -424,10 +501,16 @@ h2{
         gap: 0;
         padding: 20px 0;
         box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        overflow-y: auto;
     }
     
     .ul-nav.active {
         left: 0;
+        
+    }
+
+    body:has(.ul-nav.active) {
+        overflow: hidden;
     }
     
     .li-nav {
@@ -456,10 +539,12 @@ h2{
         padding: 10px;
         margin-top: 10px;
     }
+    
 
     #sobre, #equipe{
         padding-left: 5%;
         padding-right: 5%;
+        padding-bottom: 50px;
     }
 
     /* Conteúdo */
@@ -513,20 +598,41 @@ h2{
         flex-direction: column;
     }
 
+    .foto-nicoly{
+        margin-left: 0px;
+    }
+
+    .descricao{
+        margin-left: 0px;
+    }
+
+    .footer{
+        display: flex;
+    }
+
+    #icons-contato{
+        display: flex;
+        flex-direction: column !important;
+    }
+    .pessoa{
+        margin: 40px 0px;
+    }
+
 }
 @media (min-width: 1920px) {
+    /* HEADER */
     header{
-        height: 600px;
+        min-height: 130px;
     }
     
     
     #logo {
         width: auto;
-        height: 180px;
+        height: 110px;
     }
 
     #centerSection a{
-        font-size: 25px;
+        font-size: 21px;
         gap: 30px;
     }
 
@@ -535,11 +641,63 @@ h2{
     }
 
     #rightSection select{
-        font-size: 25px;
+        font-size: 21px;
     }
 
     #rightSection option{
         font-size: 15px;
+    }
+
+    .searchBar{
+        font-size: 23px;
+    }
+
+    .searchButton i{
+        font-size: 23px;
+    }
+
+    /* MAIN */
+
+    #main{
+        margin-top: 130px;
+    }
+
+    #tituloSobre{
+        font-size: 112px;
+    }
+
+    tituloEquipe{
+        font-size: 84px;
+    }
+
+    h2{
+        font-size: 46px;
+    }
+
+    #sobre p, #equipe p{
+        font-size: 20px;
+    }
+
+    #name{
+        font-size: 59px;
+    }
+
+    #cargo{
+        font-size: 20px;
+    }
+
+    .foto{
+        width: 192px;
+        height: 192px;
+    }
+
+    /* FOOTER */
+    #logo-footer{
+        width: 256px;
+    }
+
+    #insta, #email{
+        font-size: 20px;
     }
 }
     

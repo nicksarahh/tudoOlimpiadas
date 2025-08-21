@@ -100,6 +100,7 @@ def filtros():
     statuses = request.args.getlist('status')
     tipos_inscricao = request.args.getlist('tipo_inscricao')
     niveis = request.args.getlist('quem_pode')
+    formato = request.args.getlist('online')
 
     # Filtra por categoria (permite múltiplas)
     if categories:
@@ -133,6 +134,10 @@ def filtros():
         
         if valid_keys:
             olimpiadas_list = [o for o in olimpiadas_list if any(o.get(key, False) for key in valid_keys)]
+
+    if formato:
+        olimpiadas_list = [o for o in olimpiadas_list if o.get('formatoOnline') is True]
+
 
     return render_template('catalogo.html', olimpiadas_list=olimpiadas_list, get_status=get_status)
 

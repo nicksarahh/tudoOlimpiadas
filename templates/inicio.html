@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tudo Olimpiadas</title>
+    <meta name="google-site-verification" content="iBlxvq3C_BoH3NCDFXMPEy877Cjw1YmKEdyte8ijDRM" />
+    <meta name="description" content="">
+    <title>Tudo Olimpíadas</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/inicio.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/globo.ico') }}" media="(prefers-color-scheme: light)">
     <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/globo-branco.ico') }}" media="(prefers-color-scheme: dark)">
@@ -57,10 +59,10 @@
     
         <!-- Seletor de Idiomas Desktop (visível apenas em desktop) -->
         <div id="rightSection" class="section desktop-only">
-            <form method="GET" action="{{ url_for('buscar') }}" id="search-form">
+            <!-- <form method="GET" action="{{ url_for('buscar') }}" id="search-form">
                 <input type="text" class="searchBar" id="searchBar" name="pesquisa" placeholder="Pesquisar..." value="{{ request.args.get('pesquisa', '') }}">
                 <button class="searchButton" type="submit"><i class="bi bi-search"></i></button>
-            </form>
+            </form> -->
             <select id="seletor-idioma" aria-label="Selecionar idioma">
                 <option value="pt">🇧🇷 Português</option>
                 <option value="en">🇺🇸 English</option>
@@ -91,6 +93,15 @@
             </div>
         </div>
     </section>
+       <footer>
+        <div class="footer">
+             <img id="logo-footer" src="{{url_for('static', filename='imagens/logo.jpg')}}" alt="Tudo Olimpíadas">
+            <div id="icons-contato">
+                <i class="bi bi-envelope-fill" id="email"><label>tudoolimpiadas@hotmail.com</label></i>
+                <i class="bi bi-instagram" id="insta"><label>@tudoolimpiadas</label></i>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Menu Mobile

@@ -320,7 +320,8 @@ olimpiadas = {
         "fundamental2": True,
         "ensinoMedio": True,
         "livre": False,
-        "ensinoSuperior": False
+        "ensinoSuperior": False,
+        "formatoOnline": True
     },
     "Copa Multilaser": {
         "categoria": "Exatas",
@@ -514,7 +515,7 @@ olimpiadas = {
         "abreviacao": "Bebras",
         "link": "https://www.bebrasbrasil.com.br/",
         "olimpiada": "Competição Internacional de Pensamento Computacional",
-        "logo": "https://scontent.fcpq17-1.fna.fbcdn.net/v/t39.30808-6/454722748_475523018571053_3022125897902412000_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=YFXGFT2yM7oQ7kNvwE87v0_&_nc_oc=AdkYheb1X4ng27dHhFZBurCa6T9JnD6rh0jnhJRMcuh_rQbZd5JFiGmoS1H6xLNNdKTU-Hx3efu8aaP1xb2c9joi&_nc_zt=23&_nc_ht=scontent.fcpq17-1.fna&_nc_gid=zzQob9MpSKjD55FR_CLZPQ&oh=00_AfEoPIvrxx1uRiwZvH30B9IAqIuHISk4M12O2hy4Da3Kcg&oe=681B11EE",
+        "logo": "https://www.bebras.org/uploads/brasil_logo_fb85b55846.png",
         "modo": "preencher",
         "dataInicial": "N/A",
         "dataFinal": "N/A",
@@ -558,7 +559,8 @@ olimpiadas = {
         "fundamental2": True,
         "ensinoMedio": True,
         "livre": True,
-        "ensinoSuperior": True
+        "ensinoSuperior": True,
+        "formatoOnline": True
     },
     "First LEGO League": {
         "categoria": "Tecnologia",
@@ -701,7 +703,7 @@ olimpiadas = {
         "abreviacao": "OBQ Jr.",
         "link": "https://www.obquimica.org/olimpiadas/index/olimpiada-brasileira-de-quimica-junior",
         "olimpiada": "Olimpíada Brasileira de Química Júnior",
-        "logo": "https://ampulhetadosaber.com/wp-content/uploads/2019/06/OBQjr-900x900.png",
+        "logo": "https://i0.wp.com/noic.com.br/wp-content/uploads/2013/06/OBQJR..png",
         "modo": "manter",
         "dataInicial": "N/A",
         "dataFinal": "N/A",
@@ -881,7 +883,8 @@ olimpiadas = {
         "fundamental2": False,
         "ensinoMedio": False,
         "livre": False,
-        "ensinoSuperior": True
+        "ensinoSuperior": True,
+        "formatoOnline": True
     },
     "Brain Bee": {
         "categoria": "Ciências da Natureza",
@@ -1136,7 +1139,8 @@ olimpiadas = {
         "fundamental2": True,
         "ensinoMedio": True,
         "livre": True,
-        "ensinoSuperior": True
+        "ensinoSuperior": True,
+        "formatoOnline": True
     },
     "OBOF": {
         "categoria": "Ciências da Natureza",
@@ -1153,7 +1157,8 @@ olimpiadas = {
         "fundamental2": True,
         "ensinoMedio": True,
         "livre": False,
-        "ensinoSuperior": False
+        "ensinoSuperior": False,
+        "formatoOnline": True
     },
     "OBB Virtual": {
         "categoria": "Ciências da Natureza",
@@ -1187,7 +1192,8 @@ olimpiadas = {
         "fundamental2": True,
         "ensinoMedio": True,
         "livre": True,
-        "ensinoSuperior": True
+        "ensinoSuperior": True,
+        "formatoOnline": True
     },
     "ONNQ": {
         "categoria": "Ciências da Natureza",
@@ -1211,7 +1217,7 @@ olimpiadas = {
         "abreviacao": "CNQ",
         "link": "https://ampulhetadosaber.com/quimica/cnq/",
         "olimpiada": "Campeonato Nacional de Química",
-        "logo": "https://ampulhetadosaber.com/wp-content/uploads/2023/03/CNQ-logo-293x300.png",
+        "logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFfEjhzyV754g/company-logo_200_200/company-logo_200_200/0/1680921207510?e=2147483647&v=beta&t=_g1SZ1oSUwElYMjiLsAf6pj3NPFnj1LzWU02GnaDU70",
         "modo": "manter",
         "dataInicial": "N/A",
         "dataFinal": "N/A",
@@ -1277,12 +1283,12 @@ olimpiadas = {
     "Olimpíada Polar On": {
         "categoria": "Ciências da Natureza",
         "abreviacao": "Olimpíada Polar On",
-        "link": "https://proex.uergs.edu.br/moocs/curso-polaron",
+        "link": "https://www.uergs.edu.br/4-polaron",
         "olimpiada": "Olimpíada Polar On",
         "logo": "https://www.uergs.edu.br/upload/recortes/201912/20114900_95362_GDO.png",
         "modo": "preencher",
-        "dataInicial": "N/A",
-        "dataFinal": "N/A",
+        "dataInicial": "28/07/2025",
+        "dataFinal": "06/08/2025",
         "inscriçãoEscola": True,
         "inscriçãoAluno": False,
         "fundamental1": False,
@@ -1442,7 +1448,8 @@ olimpiadas = {
         "fundamental2": True,
         "ensinoMedio": True,
         "livre": True,
-        "ensinoSuperior": True
+        "ensinoSuperior": True,
+        "formatoOnline": True
     },
     "OBL": {
         "categoria": "Linguagens",
@@ -1476,7 +1483,8 @@ olimpiadas = {
         "fundamental2": True,
         "ensinoMedio": True,
         "livre": False,
-        "ensinoSuperior": False
+        "ensinoSuperior": False,
+        "formatoOnline": True
     },
     "OBLI": {
         "categoria": "Linguagens",
@@ -1619,7 +1627,7 @@ olimpiadas = {
         "abreviacao": "Olitef",
         "link": "https://www.olitef.com.br/",
         "olimpiada": "Olimpíada do Tesouro Direto de Educação Financeira",
-        "logo": "https://olitef.com.br/wp-content/uploads/2024/05/image_saiba_mais.png",
+        "logo": "https://editoramunera.com.br/wp-content/uploads/2024/07/647d6750-413b-467c-bb2b-68e5131747f3_logo2.png",
         "modo": "manter",
         "dataInicial": "19/03/2025",
         "dataFinal": "1/9/2025",

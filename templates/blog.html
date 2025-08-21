@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tudo Olimpiadas</title>
+    <title>Tudo Olimpíadas | Blog</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/blog.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/globo.ico') }}" media="(prefers-color-scheme: light)">
     <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/globo-branco.ico') }}" media="(prefers-color-scheme: dark)">
@@ -78,6 +78,16 @@
         <img src="{{ url_for('static', filename='imagens/gerenciamento.gif') }}">
         <h1 id="embreve">Em breve!</h1>
     </main>
+    <hr></hr>
+    <footer>
+        <div class="footer">
+             <img id="logo-footer" src="{{url_for('static', filename='imagens/logo.jpg')}}" alt="Tudo Olimpíadas">
+            <div id="icons-contato">
+                <i class="bi bi-envelope-fill" id="email"><label>tudoolimpiadas@hotmail.com</label></i>
+                <i class="bi bi-instagram" id="insta"><label>@tudoolimpiadas</label></i>
+            </div>
+        </div>
+    </footer>
     <script>
         // Menu Mobile
         const menuButton = document.getElementById('mobile-menu-button');
