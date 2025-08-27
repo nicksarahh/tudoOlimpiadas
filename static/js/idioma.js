@@ -69,13 +69,16 @@ const textos = {
           </ul>`,
       
       "universidade-pergunta": "🎓 Como entrar na universidade por vaga olímpica?",
-      "universidade-resposta": `<p>As vagas olímpicas são uma forma de ingresso alternativa oferecida por algumas universidades, selecionando <strong>estudantes em olimpíadas científicas</strong> - geralmente medalhistas ou com menções honrosas em fases nacionais. Esse tipo de ingresso dispensa a realização do vestibular tradicional, valorizando o histórico acadêmico e o comprometimento do jovens com a iniciação científica.</p>
-          <p>Diversas instituições já adotam esse modelo, entre elas: UNICAMP, UFMG, UFRJ e UFF. Cada uma delas define critérios próprios, incluindo quais olimpíadas são aceitas, a pontuação mínima exigida e os cursos aplicáveis. Essas regras são publicadas nos editais de cada processo seletivo.</p>`,
+      "universidade-resposta": `<p>As vagas olímpicas são uma forma de ingresso alternativa oferecida por algumas universidades, selecionando estudantes com alto desempenho em olimpíadas científicas - <strong>geralmente medalhistas ou com menções honrosas em fases nacionais.</strong> Esse tipo de ingresso <strong>dispensa a realização do vestibular tradicional</strong>, valorizando o histórico acadêmico e o comprometimento do jovem com a iniciação científica.</p>
+                
+                <p>Diversas instituições já adotam esse modelo, entre elas: <strong>UNICAMP, UFMG, UFRJ e UFF.</strong> Cada uma delas define critérios próprios, incluindo quais olimpíadas são aceitas, a pontuação mínima exigida e os cursos aplicáveis. Essas <strong>regras são publicadas nos editais de cada processo seletivo.</strong></p>`,
       
       "seletivas-pergunta": "🌎 O que são as seletivas internacionais?",
-      "seletivas-resposta": `<p>As seletivas internacionais são processos classificatórios que têm como objetivo formar as equipes brasileiras que representarão o país em olimpíadas científicas internacionais.</p>
-          <p>Ao contrário das olimpíadas tradicionais, essas seletivas não são abertas ao público em geral. Normalmente, estudantes que obteram alto desempenho nas olimpíadas nacionais são convidados a participar de fases dessas seletivas. Aqueles que passarem pelas diversas fases eliminatórias receberão um treinamento acadêmico intensivo e preparatório para as competições internacionais, em que irão viajar e representar o Brasil.</p>
-          <p>Duas das seletivas mais conhecidas são:</p>
+      "seletivas-resposta": `<p>As seletivas internacionais são processos classificatórios que têm como objetivo formar as <strong>equipes brasileiras que representarão o país em olimpíadas científicas internacionais.</strong></p>
+                
+                <p>Ao contrário das olimpíadas tradicionais, essas seletivas <strong>não são abertas ao público em geral.</strong> Normalmente, <strong>estudantes que obteram alto desempenho nas olimpíadas nacionais</strong> são convidados a participar de fases dessas seletivas. Aqueles que passarem pelas diversas fases eliminatórias receberão um treinamento acadêmico intensivo e preparatório para as competições internacionais, em que irão viajar e representar o Brasil.</p>
+                
+                <p><strong>Duas das seletivas mais conhecidas são:</strong></p>
           <ul>
               <li>A da OBA, que leva alunos para a OLAA (Olimpíada Latinoamericana de Astronomia e Astronáutica), para a OIAA (Olimpíada Internacional de Astronomia e Astrofísica) e para a IAO (Olimpíada Internacional Astronomia)</li>
               <li>A OBM, que é ao mesmo tempo uma olimpíada nacional (na qual só se entra por um convite, recebido pelos melhores classificados em outras competições) e uma seletiva para a IMO (Olimpíada Internacional de Matemática).</li>
@@ -133,7 +136,7 @@ const textos = {
       searchBar: "Pesquisar...",
       cargo_isabella: "CEO",
       cargo_laila: "Diretora Criativa",
-      cargo_inae: "Segunda Diretora Técnica",
+      cargo_inae: "Co-Diretora Técnica",
       cargo_nicoly: "Diretora Técnica",
       cargo_daniela: "Diretora de Marketing e Mídia"
     },
@@ -229,13 +232,13 @@ const textos = {
           </ul>`,
       
       "universidade-pergunta": "🎓 How to enter university through an olympic vacancy?",
-      "universidade-resposta": `<p>Olympic vacancies are an alternative form of admission offered by some universities, selecting <strong>students with high performance in scientific olympiads</strong> - usually medalists or with honorable mentions in national stages. This type of admission exempts students from taking the traditional entrance exam, valuing academic history and the young person's commitment to scientific initiation.</p>
-          <p>Several institutions already adopt this model, including: UNICAMP, UFMG, UFRJ and UFF. Each of them defines their own criteria, including which olympiads are accepted, the minimum score required and applicable courses. These rules are published in the notices of each selection process.</p>`,
+      "universidade-resposta": `<p>Olympic vacancies are an alternative form of admission offered by some universities, selecting students with high performance in scientific olympiads - <strong>usually medalists or with honorable mentions in national stages.</strong> This type of admission <strong>exempts students from taking the traditional entrance exam</strong>, valuing academic history and the young person's commitment to scientific initiation.</p>
+          <p>Several institutions already adopt this model, including: <strong>UNICAMP, UFMG, UFRJ and UFF.</strong> Each of them defines their own criteria, including which olympiads are accepted, the minimum score required and applicable courses. These <strong>rules are published in the notices of each selection process.</strong></p>`,
       
       "seletivas-pergunta": "🌎 What are international selections?",
       "seletivas-resposta": `<p>International selections are qualifying processes that aim to form the Brazilian teams that will represent the country in international scientific olympiads.</p>
-          <p>Unlike traditional olympiads, these selections are not open to the general public. Normally, students who obtained high performance in national olympiads are invited to participate in stages of these selections. Those who pass through the various eliminatory stages will receive intensive academic training and preparation for international competitions, where they will travel and represent Brazil.</p>
-          <p>Two of the best-known selections are:</p>
+          <p>Unlike traditional olympiads, these selections <strong>are not open to the general public.</strong> Normally, <strong>students who obtained high performance in national olympiads</strong> are invited to participate in stages of these selections. Those who pass through the various eliminatory stages will receive intensive academic training and preparation for international competitions, where they will travel and represent Brazil.</p>
+          <p><strong>Two of the best-known selections are:</strong></p>
           <ul>
               <li>OBA's, which takes students to OLAA (Latin American Astronomy and Astronautics Olympiad), to IOAA (International Olympiad on Astronomy and Astrophysics) and to IAO (International Astronomy Olympiad)</li>
               <li>OBM, which is both a national olympiad (which can only be entered by invitation, received by the top ranked in other competitions) and a selection for IMO (International Mathematical Olympiad).</li>
@@ -293,7 +296,7 @@ const textos = {
       searchBar: "Search...",
       cargo_isabella: "CEO",
       cargo_laila: "Creative Director",
-      cargo_inae: "Secondary Technical Director",
+      cargo_inae: "Co-Technical Director",
       cargo_nicoly: "Technical Director",
       cargo_daniela: "Marketing and Media Director"
     },
