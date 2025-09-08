@@ -222,7 +222,7 @@ form {
 
   
 main{
-    margin: 150px 50px 0px;
+    margin: 100px 50px 0px;
     margin-top: 100px;
 }
 
@@ -239,7 +239,7 @@ h1{
 }
 
 h2{
-    margin: 50px 0;
+    margin: 55px 0px 20px;
     font-family: var(--avenir);
     font-size: 36px;
     font-weight: 400;
@@ -248,7 +248,7 @@ h2{
 
 #sobre, #equipe{
     width: 100%;
-    padding-left: 20%;
+    padding-left: 15%;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -268,6 +268,14 @@ h2{
     font-family: var(--cabeçalho);
     font-size: 46px;
     font-weight: 400;
+}
+
+#hrmain{
+    margin: 0px 150px;
+}
+
+#hrfooter{
+    margin: 0px 50px;
 }
 
 /* Fotos Redondas (Solução Aprimorada) */
@@ -561,9 +569,9 @@ body:has(.ul-nav.active) {
         
     }
 
-    #tituloMissao, #tituloConheca {
+    #tituloMissao, #tituloConheca, #tituloOque {
         font-size: 1.5rem;
-        margin-top: 15px;
+        margin-top: 5px;
         margin-bottom: 5px;
     }
 
@@ -573,7 +581,7 @@ body:has(.ul-nav.active) {
         box-sizing: border-box;
     }
 
-    #paragrafiMissao, #ParagrafoConheca{
+    #paragrafiMissao, #ParagrafoConheca, #paragrafoOque{
         width: 100%;
         max-width: 100%;
         display: flex;
@@ -666,12 +674,9 @@ body:has(.ul-nav.active) {
         font-size: 112px;
     }
 
-    tituloEquipe{
+    #tituloEquipe{
         font-size: 84px;
-    }
-
-    h2{
-        font-size: 46px;
+        color: var(--azul);
     }
 
     #sobre p, #equipe p{
