@@ -521,8 +521,31 @@ hr{
     }
     
     #olimpiadas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
+        column-gap: 1%;
+        padding: 30px;
         width: 100%;
-        padding: 0;
+        justify-content: center; /* centraliza o grid */
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    #olimpiadas .card {
+        width: 50%; /* fixa o tamanho do card */
+        margin: 0 10px; 
+    }
+
+    .imagem{
+        height: 120px;
+        width: 120px;
+        margin: 20px;
+    }
+
+    .card a{
+        width: 130px;
     }
 
     .filtro.mobile-visible {
@@ -531,6 +554,13 @@ hr{
 
     #icons-contato{
         flex-direction: column;
+    }
+}
+
+/* ===== Celular deitado ===== */
+@media (max-width: 899px) and (orientation: landscape) {
+    #olimpiadas {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas no landscape */
     }
 }
 
